@@ -1,52 +1,61 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>F ❤️ L Anniversary</title>
   <style>
     body {
       margin: 0;
       padding: 0;
       background: linear-gradient(to bottom, #0f2027, #203a43, #2c5364);
-      overflow: hidden;
+      overflow-y: auto; /* Enable vertical scrolling */
       font-family: 'Segoe UI', sans-serif;
       color: #fff;
       text-align: center;
     }
+
     .stars, .shooting-star {
       position: absolute;
       background: white;
       border-radius: 50%;
     }
+
     .stars {
       width: 2px;
       height: 2px;
       animation: twinkle 3s infinite ease-in-out;
     }
+
     .shooting-star {
       width: 60px;
       height: 2px;
       background: linear-gradient(-45deg, white, transparent);
       animation: shoot 3s infinite;
     }
+
     @keyframes twinkle {
       0%, 100% { opacity: 0.2; }
       50% { opacity: 1; }
     }
+
     @keyframes shoot {
       0% { transform: translateX(0) translateY(0); opacity: 1; }
       100% { transform: translateX(-600px) translateY(300px); opacity: 0; }
     }
+
     .heart {
       font-size: 5rem;
       margin-top: 20vh;
       animation: beat 1s infinite;
       cursor: pointer;
     }
+
     @keyframes beat {
       0%, 100% { transform: scale(1); }
       50% { transform: scale(1.2); }
     }
+
     .popup {
       display: none;
       position: fixed;
@@ -59,34 +68,42 @@
       box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
       width: 80%;
       max-width: 500px;
+      max-height: 90vh;
+      overflow-y: auto; /* Make popup scrollable */
       position: relative;
     }
+
     .popup::before, .popup::after {
       content: "🌸🌺🌼";
       position: absolute;
       font-size: 1.5rem;
       color: pink;
     }
+
     .popup::before {
       top: -20px;
       left: -20px;
     }
+
     .popup::after {
       bottom: -20px;
       right: -20px;
     }
+
     .popup .flower-top {
       position: absolute;
       top: -30px;
       left: 50%;
       transform: translateX(-50%);
     }
+
     .popup .flower-bottom {
       position: absolute;
       bottom: -30px;
       left: 50%;
       transform: translateX(-50%);
     }
+
     .typewriter {
       overflow: hidden;
       border: 2px dashed pink;
@@ -98,33 +115,40 @@
       letter-spacing: .1em;
       animation: typing 4s steps(40, end), blink-caret .75s step-end infinite;
     }
+
     @keyframes typing {
       from { width: 0 }
       to { width: 100% }
     }
+
     @keyframes blink-caret {
       from, to { border-color: transparent }
       50% { border-color: orange; }
     }
+
     .flowers {
       margin-top: 20px;
       font-size: 1.2rem;
       color: pink;
     }
+
     .footer {
       display: none;
     }
   </style>
 </head>
 <body>
+  <!-- Background stars and shooting stars -->
   <div class="stars" style="top: 10%; left: 20%;"></div>
   <div class="stars" style="top: 30%; left: 70%;"></div>
   <div class="stars" style="top: 60%; left: 50%;"></div>
   <div class="shooting-star" style="top: 10%; left: 90%; animation-delay: 2s;"></div>
   <div class="shooting-star" style="top: 30%; left: 80%; animation-delay: 4s;"></div>
 
+  <!-- Heart trigger -->
   <div class="heart" onclick="togglePopup()">❤️</div>
 
+  <!-- Popup message -->
   <div id="popup" class="popup">
     <div class="flower-top">🌸🌺🌼</div>
     <h2 class="typewriter">🌸🌼🌺 Happy 1st anniversary my dear Loving Wife 💞 🌺🌼🌸</h2>
@@ -132,10 +156,12 @@
     <p class="flowers">F ❤️ L – Forever Together</p>
   </div>
 
+  <!-- Background music -->
   <audio autoplay loop>
     <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
   </audio>
 
+  <!-- Script to toggle popup -->
   <script>
     function togglePopup() {
       const popup = document.getElementById('popup');
