@@ -9,7 +9,7 @@
       margin: 0;
       padding: 0;
       background: linear-gradient(to bottom, #0f2027, #203a43, #2c5364);
-      overflow-y: auto; /* Enable vertical scrolling */
+      overflow: hidden;
       font-family: 'Segoe UI', sans-serif;
       color: #fff;
       text-align: center;
@@ -62,14 +62,13 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      background: rgba(0, 0, 0, 0.8);
-      padding: 30px;
+      background: rgba(0, 0, 0, 0.85);
+      padding: 30px 20px;
       border-radius: 16px;
-      box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
-      width: 80%;
-      max-width: 500px;
-      max-height: 90vh;
-      overflow-y: auto; /* Make popup scrollable */
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+      width: 90%;
+      max-width: 600px;
+      box-sizing: border-box;
       position: relative;
     }
 
@@ -90,39 +89,39 @@
       right: -20px;
     }
 
+    .popup .flower-top,
+    .popup .flower-bottom {
+      font-size: 1.5rem;
+      color: pink;
+      margin-bottom: 10px;
+    }
+
     .popup .flower-top {
-      position: absolute;
-      top: -30px;
-      left: 50%;
-      transform: translateX(-50%);
+      margin-bottom: 20px;
     }
 
     .popup .flower-bottom {
-      position: absolute;
-      bottom: -30px;
-      left: 50%;
-      transform: translateX(-50%);
+      margin-top: 20px;
     }
 
     .typewriter {
-      overflow: hidden;
-      border: 2px dashed pink;
+      display: inline-block;
       padding: 15px;
+      border: 2px dashed pink;
       border-radius: 12px;
-      border-right: .15em solid orange;
-      white-space: nowrap;
-      margin: 0 auto;
-      letter-spacing: .1em;
-      animation: typing 4s steps(40, end), blink-caret .75s step-end infinite;
+      white-space: normal;
+      word-wrap: break-word;
+      font-size: 1.2rem;
+      animation: typing 3s steps(40, end), blink-caret .75s step-end infinite;
     }
 
     @keyframes typing {
-      from { width: 0 }
-      to { width: 100% }
+      from { width: 0; }
+      to { width: 100%; }
     }
 
     @keyframes blink-caret {
-      from, to { border-color: transparent }
+      from, to { border-color: transparent; }
       50% { border-color: orange; }
     }
 
@@ -134,6 +133,12 @@
 
     .footer {
       display: none;
+    }
+
+    @media (max-width: 600px) {
+      .typewriter {
+        font-size: 1rem;
+      }
     }
   </style>
 </head>
@@ -151,7 +156,9 @@
   <!-- Popup message -->
   <div id="popup" class="popup">
     <div class="flower-top">🌸🌺🌼</div>
-    <h2 class="typewriter">🌸 Happy 1st anniversary my dear Loving Wife 💞 </h2>
+    <h2 class="typewriter">
+      🌸🌼🌺 Happy 1st Anniversary, My Loving Wife 💞. You make every moment magical. I am grateful every day for your love, care, and smile. Here's to forever together, my soulmate. 🌺🌼🌸
+    </h2>
     <div class="flower-bottom">🌸🌺🌼</div>
     <p class="flowers">F ❤️ L – Forever Together</p>
   </div>
